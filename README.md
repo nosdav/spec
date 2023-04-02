@@ -33,7 +33,7 @@ Nosdav supports the retrieval and storage of any type of file using the followin
 
 ## Authentication
 
-To ensure the authenticity of a request, the client should include a header with a signed nostr event. The header should be in the following format: `Authorization: Nostr base64{base64(signed-event)}`. The signed-event should be a signature of the nostr event using nostr-id and Schnorr signature scheme.
+To ensure the authenticity of a request, the client should include a header with a signed nostr event. The header should be in the following format: `Authorization: Nostr base64{base64(signed-event)}`.  The event should be kind=27235 with empty content. The signed-event should be a signature of the nostr event using nostr-id and Schnorr signature scheme.
 
 ## File Types
 
