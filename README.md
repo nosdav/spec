@@ -48,6 +48,8 @@ To ensure the authenticity of a request, the client should include a header with
 ```
 The event above should be signed with a public key
 
+The server should check the signature, the freshness of the created_at timestamp and the url tag
+
 ## File Types
 
 NosDAV supports the storage of any type of file including `.json`. The server should use the file extension to determine the file type and respond with the appropriate content type header. For example, if the file extension is `.txt`, the server should respond with the following header: `Content-Type: text/plain`. Similarly, if the file extension is `.html`, the server should respond with the following header: `Content-Type: text/html`. For `.json` files, the server should respond with the following header: `Content-Type: application/json`.
