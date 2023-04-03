@@ -82,13 +82,16 @@ Discovery of user storage is not covered fully in this spec, as it will be appli
 
 ## New account provision
 
-New account provision is not discussed, but per user storage is a sensible strategy of the form /root/pubkey/
+New account provision out of scope of this specification, but per user storage is a sensible strategy of the form /root/pubkey/
 
----
+## Summary
 
 This specification provides a flexible framework for storing files using HTTP requests. By supporting any type of file and using `nostr-id` as an identity, it enables clients to store and retrieve files securely. The authentication mechanism ensures the authenticity of requests and the server responds with the appropriate content type header based on the file extension. The use of the Schnorr signature scheme provides an additional layer of security to the authentication process.
 
 
+## Implementations
+
+- [JavaScript Server](https://nosdav.com/server/)
 
 ## License
 
