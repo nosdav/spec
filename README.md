@@ -74,6 +74,12 @@ Access conrtrol is a work in progress.  By default anyone can GET a URI, but you
 - Paywall - pay to see a file
 - Quotas - quota limits determine access to the API
 
+
+## Discovery
+
+Discovery of user storage is not covered fully in this spec, as it will be application speciric.  App specific data MAY be used with kind=30087 and a d tag as specified in [NIP-78](https://nips.be/78), and a `storage` tag indicated the base of the storage URI.
+
+
 ## New account provision
 
 New account provision is not discussed, but per user storage is a sensible strategy of the form /root/pubkey/
