@@ -23,6 +23,10 @@
 
 NosDAV is a specification that extends WebDAV to provide a way to store files using HTTP requests. The specification includes an authentication mechanism that involves sending a header with a signed nostr event to ensure the authenticity of the request.
 
+## New account provision
+
+New account provision out of scope of this specification, but users are assumed to be on the nostr network.  Per user storage is a recommended strategy for a nosdav provider, of for the rest of this spec is assumed to be the form /root/nostr-id/ where nostr-id is the nostr pubkey
+
 ## HTTP Verbs
 
 Nosdav supports the retrieval and storage of any type of file using the following HTTP verbs:
@@ -39,7 +43,7 @@ Nosdav supports the retrieval and storage of any type of file using the followin
 
 ![image](https://user-images.githubusercontent.com/65864/229709383-55475e5a-8ee3-4b0a-a177-dd88030089e6.png)
 
-## Authentication
+## Authentication Header
 
 To ensure the authenticity of a request, the client should include a header with a signed nostr event. The header should be in the following format: `Authorization: Nostr base64{base64(signed-event)}`.  The event should be kind=27235 with empty content. The signed-event should be a signature of the nostr event using nostr-id and Schnorr signature scheme.
 ```json
@@ -85,10 +89,6 @@ Access conrtrol is a work in progress.  By default anyone can GET a URI, but you
 
 Discovery of user storage is not covered fully in this spec, as it will be application speciric.  App specific data MAY be used with kind=30087 and a d tag as specified in [NIP-78](https://nips.be/78), and a `storage` tag indicated the base of the storage URI.
 
-
-## New account provision
-
-New account provision out of scope of this specification, but per user storage is a sensible strategy of the form /root/pubkey/
 
 ## Summary
 
