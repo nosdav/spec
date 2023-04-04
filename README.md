@@ -21,7 +21,7 @@
 
 # NosDAV - Nostr Distributed Authoring and Versioning
 
-NosDAV is a distributed protocol that extends WebDAV, designed to be used in conjunction with the Nostr network. It provides a secure and efficient way to store files in the cloud using HTTP requests. The protocol includes a robust authentication mechanism that requires clients to send a signed Nostr event in a custom header to verify the authenticity of requests. By leveraging the power of Nostr and HTTP, NosDAV provides an innovative solution for secure cloud storage
+NosDAV is a distributed protocol similar to WebDAV, designed to be used in conjunction with the [Nostr](https://github.com/nostr-protocol/nostr) network. It provides a secure and efficient way to store files in the cloud using HTTP requests. The protocol includes a robust authentication mechanism that requires clients to send a signed Nostr event in a custom header to verify the authenticity of requests. By leveraging the power of Nostr and HTTP, NosDAV provides an innovative solution for secure cloud storage
 
 ## New Accounts
 
@@ -76,7 +76,7 @@ NosDAV servers should include CORS headers to enable cross-origin requests. The 
 
 ## Discovery
 
-Discovery of user storage is not covered fully in this spec, as it will be application speciric.  App specific data MAY be used with kind=30087 and a d tag as specified in [NIP-78](https://nips.be/78), and a `storage` tag indicated the base of the storage URI.
+Discovery of user storage is not covered fully in this spec, as it will be application speciric.  App specific data MAY be used with kind=30078 and a d tag as specified in [NIP-78](https://nips.be/78), and a `storage` tag indicated the base of the storage URI.
 
 
 ## Summary
