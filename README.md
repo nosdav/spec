@@ -21,7 +21,7 @@
 
 # NosDAV - Nostr Distributed Authoring and Versioning
 
-NosDAV is a specification that extends WebDAV to provide a way to store files using HTTP requests. The specification includes an authentication mechanism that involves sending a header with a signed nostr event to ensure the authenticity of the request.
+NosDAV is a distributed protocol that extends WebDAV, designed to be used in conjunction with the Nostr network. It provides a secure and efficient way to store files in the cloud using HTTP requests. The protocol includes a robust authentication mechanism that requires clients to send a signed Nostr event in a custom header to verify the authenticity of requests. By leveraging the power of Nostr and HTTP, NosDAV provides an innovative solution for secure cloud storage
 
 ## New account provision
 
