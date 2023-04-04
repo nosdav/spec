@@ -68,13 +68,11 @@ NosDAV supports the storage of any type of file including `.json`. The server sh
 
 ## CORS
 
-Cors headers should be provided:
+NosDAV servers should include CORS headers to enable cross-origin requests. The following headers should be set:
 
-```JavaScript
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-```
+    Access-Control-Allow-Origin: '*'
+    Access-Control-Allow-Methods: GET, PUT, OPTIONS
+    Access-Control-Allow-Headers: Content-Type, Authorization"
 
 ## Discovery
 
