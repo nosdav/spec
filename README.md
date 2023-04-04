@@ -76,7 +76,9 @@ NosDAV servers should include CORS headers to enable cross-origin requests. The 
 
 ## Discovery
 
-Discovery of user storage is not covered fully in this spec, as it will be application speciric.  App specific data MAY be used with kind=30078 and a d tag as specified in [NIP-78](https://nips.be/78), and a `storage` tag indicated the base of the storage URI.
+Discovery of user storage is not covered fully in this spec, as it will be application speciric.  App specific data MAY be used with kind=30078 and a d tag as specified in , and a `storage` tag indicated the base of the storage URI.
+
+While NosDAV provides a flexible framework for storing files, the specification does not cover the discovery of user storage in full detail. This is because the discovery process is likely to be application-specific. However, the use of custom data with the kind=30078,  and a d tag, as specified in [NIP-78](https://nips.be/78), may be used to provide application-specific information. Additionally, a storage tag may be saved on relays to indicate the preferred storage URI, for each user.
 
 
 ## Summary
