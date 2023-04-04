@@ -31,15 +31,13 @@ Nosdav supports the retrieval and storage of any type of file using the followin
 
 1. `GET`: The GET verb is used to retrieve a file. The request URI should be in the following format: `/{nostr-id}/{file-path}`. Upon receiving a GET request, the server should respond with the file corresponding to the specified nostr-id and file-path. If the specified file-path does not exist or the nostr-id is invalid, the server should respond with a 404 status code.
 
-
-![image](https://user-images.githubusercontent.com/65864/229709383-55475e5a-8ee3-4b0a-a177-dd88030089e6.png)
-
+![image](https://user-images.githubusercontent.com/65864/229709609-107e4570-9407-4ebf-9f50-0f745e752eb6.png)
 
 ### PUT
 
 2. `PUT`: The PUT verb is used to update an existing file or create a new one. The request URI should be in the following format: `/{nostr-id}/{file-path}`. The request body should contain the updated file. Upon receiving a PUT request, the server should update the existing file or create a new one if it does not exist. If the request body is invalid or the request cannot be completed for some other reason, the server should respond with an appropriate HTTP status code.
 
-![image](https://user-images.githubusercontent.com/65864/229708381-84b4ccd0-f9fb-4e37-82ef-95269e92a55c.png)
+![image](https://user-images.githubusercontent.com/65864/229709383-55475e5a-8ee3-4b0a-a177-dd88030089e6.png)
 
 ## Authentication
 
