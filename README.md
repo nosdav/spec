@@ -38,8 +38,7 @@ Nosdav supports the retrieval and storage of any type of file using the followin
 
 2. `PUT`: The PUT verb is used to update an existing file or create a new one. The request URI should be in the following format: `/{nostr-id}/{file-path}`. The request body should contain the updated file. Upon receiving a PUT request, the server should update the existing file or create a new one if it does not exist. If the request body is invalid or the request cannot be completed for some other reason, the server should respond with an appropriate HTTP status code.
 
-![image](https://user-images.githubusercontent.com/65864/229706997-abd119a6-cce5-4580-bb59-fde65e4a8d8f.png)
-
+![image](https://user-images.githubusercontent.com/65864/229708381-84b4ccd0-f9fb-4e37-82ef-95269e92a55c.png)
 
 ## Authentication
 
