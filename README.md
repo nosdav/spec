@@ -31,7 +31,8 @@ Nosdav supports the retrieval and storage of any type of file using the followin
 
 1. `GET`: The GET verb is used to retrieve a file. The request URI should be in the following format: `/{nostr-id}/{file-path}`. Upon receiving a GET request, the server should respond with the file corresponding to the specified nostr-id and file-path. If the specified file-path does not exist or the nostr-id is invalid, the server should respond with a 404 status code.
 
-![image](https://user-images.githubusercontent.com/65864/229706858-0edfc9c9-2458-484a-ae36-cd1ee0fedc9e.png)
+
+![image](https://user-images.githubusercontent.com/65864/229709383-55475e5a-8ee3-4b0a-a177-dd88030089e6.png)
 
 
 ### PUT
