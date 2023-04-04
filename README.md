@@ -25,11 +25,11 @@ NosDAV is a specification that extends WebDAV to provide a way to store files us
 
 ## New account provision
 
-New account provision out of scope of this specification, but users are assumed to be on the nostr network.  Per user storage is a recommended strategy for a nosdav provider, of for the rest of this spec is assumed to be the form /root/nostr-id/ where nostr-id is the nostr pubkey
+Provisioning of new accounts is outside the scope of this specification. However, it is assumed that users are on the Nostr network. A recommended strategy for a NosDAV provider is to use per-user storage in the form of '/nostr-id/', where 'nostr-id' is the Nostr public key
 
 ## HTTP Verbs
 
-Nosdav supports the retrieval and storage of any type of file using the following HTTP verbs:
+NosDAV supports the retrieval and storage of any type of file using the following HTTP verbs:
 
 ### GET 
 
@@ -58,13 +58,13 @@ The event above should be signed with a public key
 
 The server should check the signature, the freshness of the created_at timestamp and the url tag
 
+## Access Control
+
+By default, access control in NosDAV allows anyone to retrieve a URI using the GET verb. However, authentication is required to modify a URI using the PUT verb.
+
 ## File Types
 
 NosDAV supports the storage of any type of file including `.json`. The server should use the file extension to determine the file type and respond with the appropriate content type header. For example, if the file extension is `.txt`, the server should respond with the following header: `Content-Type: text/plain`. Similarly, if the file extension is `.html`, the server should respond with the following header: `Content-Type: text/html`. For `.json` files, the server should respond with the following header: `Content-Type: application/json`.
-
-## Identity
-
-NosDAV uses `nostr-id` as an identity to store and retrieve files. The `nostr-id` specified in the request URI identifies the nostr event associated with the files. The server should validate the `nostr-id` to ensure that the request is authorized.
 
 ## CORS
 
@@ -76,15 +76,6 @@ Cors headers should be provided:
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 ```
 
-## Access Control
-
-Access conrtrol is a work in progress.  By default anyone can GET a URI, but you need Auth to PUT a URI.  Other access control strategies will be:
-- Private files - only you can see a file
-- Shared files - you choose who can see a file
-- Paywall - pay to see a file
-- Quotas - quota limits determine access to the API
-
-
 ## Discovery
 
 Discovery of user storage is not covered fully in this spec, as it will be application speciric.  App specific data MAY be used with kind=30087 and a d tag as specified in [NIP-78](https://nips.be/78), and a `storage` tag indicated the base of the storage URI.
@@ -93,6 +84,14 @@ Discovery of user storage is not covered fully in this spec, as it will be appli
 ## Summary
 
 This specification provides a flexible framework for storing files using HTTP requests. By supporting any type of file and using `nostr-id` as an identity, it enables clients to store and retrieve files securely. The authentication mechanism ensures the authenticity of requests and the server responds with the appropriate content type header based on the file extension. The use of the Schnorr signature scheme provides an additional layer of security to the authentication process.
+
+
+## Extensions
+
+- Private files - only you can see a file
+- Shared files - you choose who can see a file
+- Paywall - pay to see a file
+- Quotas - quota limits determine access to the API
 
 
 ## Implementations
