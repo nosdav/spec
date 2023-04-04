@@ -62,9 +62,9 @@ The server should check the signature, the freshness of the created_at timestamp
 
 By default, access control in NosDAV allows anyone to retrieve a URI using the GET verb. However, authentication is required to modify a URI using the PUT verb.
 
-## File Types
+## Content Types
 
-NosDAV supports the storage of any type of file including `.json`. The server should use the file extension to determine the file type and respond with the appropriate content type header. For example, if the file extension is `.txt`, the server should respond with the following header: `Content-Type: text/plain`. Similarly, if the file extension is `.html`, the server should respond with the following header: `Content-Type: text/html`. For `.json` files, the server should respond with the following header: `Content-Type: application/json`.
+NosDAV allows for storage of any content type, including .json. The server should determine the file type based on its extension and respond with the appropriate Content-Type header. For example, .txt files should be served with Content-Type: text/plain, .html files with Content-Type: text/html, and .json files with Content-Type: application/json.
 
 ## CORS
 
