@@ -23,6 +23,8 @@
 
 NosDAV is a specification that extends WebDAV to provide a way to store files using HTTP requests. The specification includes an authentication mechanism that involves sending a header with a signed nostr event to ensure the authenticity of the request.
 
+The NosDAV spec is extended with optional [NAVs](https://nosdav.com/navs) which are NosDAV Advancement Possibilities.
+
 ## HTTP Verbs
 
 Nosdav supports the retrieval and storage of any type of file using the following HTTP verbs:
