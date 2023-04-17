@@ -25,13 +25,17 @@ NosDAV is a distributed protocol similar to WebDAV, designed to be used in conju
 
 The NosDAV spec is extended with optional [NAVs](https://nosdav.com/navs) which are NosDAV Advancement Possibilities.
 
-## New Accounts
+## Identity
 
-Provisioning of new accounts is outside the scope of this specification. However, it is assumed that users are on the Nostr network. A recommended strategy for a NosDAV provider is to use per-user storage in the form of '/nostr-id/', where 'nostr-id' is the Nostr public key
+Provisioning of identity and new accounts is outside the scope of this specification. However, it is assumed that users are on the Nostr network. A recommended strategy for a NosDAV provider is to use per-user storage in the form of '/nostr-id/', where 'nostr-id' is the Nostr public key
+
+- see also [NAV-01](https://nosdav.com/navs/02.html)
 
 ## HTTP Verbs
 
 NosDAV supports the retrieval and storage of any type of file using the following HTTP verbs:
+
+- see also [NAV-01](https://nosdav.com/navs/01.html)
 
 ### GET 
 
@@ -44,6 +48,7 @@ NosDAV supports the retrieval and storage of any type of file using the followin
 2. `PUT`: The PUT verb is used to update an existing file or create a new one. The request URI should be in the following format: `/{nostr-id}/{file-path}`. The request body should contain the updated file. Upon receiving a PUT request, the server should update the existing file or create a new one if it does not exist. If the request body is invalid or the request cannot be completed for some other reason, the server should respond with an appropriate HTTP status code.
 
 ![image](https://user-images.githubusercontent.com/65864/229709383-55475e5a-8ee3-4b0a-a177-dd88030089e6.png)
+
 
 ## Authentication Header
 
@@ -60,13 +65,19 @@ The event above should be signed with a public key
 
 The server should check the signature, the freshness of the created_at timestamp and the url tag
 
+- see also [NAV-03](https://nosdav.com/navs/03.html)
+
 ## Access Control
 
 By default, access control in NosDAV allows anyone to retrieve a URI using the GET verb. However, authentication is required to modify a URI using the PUT verb.
 
+- see also [NAV-04](https://nosdav.com/navs/04.html)
+
 ## Content Types
 
 NosDAV allows for storage of any content type, including .json. The server should determine the file type based on its extension and respond with the appropriate Content-Type header. For example, .txt files should be served with Content-Type: text/plain, .html files with Content-Type: text/html, and .json files with Content-Type: application/json.
+
+- see also [NAV-06](https://nosdav.com/navs/06.html)
 
 ## CORS
 
@@ -76,12 +87,15 @@ NosDAV servers should include CORS headers to enable cross-origin requests. The 
     Access-Control-Allow-Methods: GET, PUT, OPTIONS
     Access-Control-Allow-Headers: Content-Type, Authorization"
 
+- see also [NAV-05](https://nosdav.com/navs/05.html)
+
 ## Discovery
 
 Discovery of user storage is not covered fully in this spec, as it will be application speciric.  App specific data MAY be used with kind=30078 and a d tag as specified in , and a `storage` tag indicated the base of the storage URI.
 
 While NosDAV provides a flexible framework for storing files, the specification does not cover the discovery of user storage in full detail. This is because the discovery process is likely to be application-specific. However, the use of custom data with the kind=30078,  and a d tag, as specified in [NIP-78](https://nips.be/78), may be used to provide application-specific information. Additionally, a storage tag may be saved on relays to indicate the preferred storage URI, for each user.
 
+- see also [NAV-07](https://nosdav.com/navs/07.html)
 
 ## Summary
 
@@ -89,6 +103,8 @@ This specification provides a flexible framework for storing files using HTTP re
 
 
 ## Extensions
+
+Extensions are provided in the [NAVs](https://nosdav.com/navs/).  Some examples could be:
 
 - Private files - only you can see a file
 - Shared files - you choose who can see a file
