@@ -29,13 +29,13 @@ The NosDAV spec is extended with optional [NAVs](https://nosdav.com/navs) which 
 
 Provisioning of identity and new accounts is outside the scope of this specification. However, it is assumed that users are on the Nostr network. A recommended strategy for a NosDAV provider is to use per-user storage in the form of '/nostr-id/', where 'nostr-id' is the Nostr public key
 
-- see also [NAV-01](https://nosdav.com/navs/02.html)
+- see also [NAV-01](https://nosdav.com/navs/01.html)
 
 ## HTTP Verbs
 
 NosDAV supports the retrieval and storage of any type of file using the following HTTP verbs:
 
-- see also [NAV-01](https://nosdav.com/navs/01.html)
+- see also [NAV-02](https://nosdav.com/navs/02.html)
 
 ### GET 
 
