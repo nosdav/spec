@@ -23,11 +23,11 @@
 
 NosDAV is a distributed protocol similar to WebDAV, designed to be used in conjunction with the [Nostr](https://github.com/nostr-protocol/nostr) network. It provides a secure and efficient way to store files in the cloud using HTTP requests. The protocol includes a robust authentication mechanism that requires clients to send a signed Nostr event in a custom header to verify the authenticity of requests. By leveraging the power of Nostr and HTTP, NosDAV provides an innovative solution for secure cloud storage
 
+The NosDAV spec is extended with optional [NAVs](https://nosdav.com/navs) which are NosDAV Advancement Possibilities.
+
 ## New Accounts
 
 Provisioning of new accounts is outside the scope of this specification. However, it is assumed that users are on the Nostr network. A recommended strategy for a NosDAV provider is to use per-user storage in the form of '/nostr-id/', where 'nostr-id' is the Nostr public key
-
-The NosDAV spec is extended with optional [NAVs](https://nosdav.com/navs) which are NosDAV Advancement Possibilities.
 
 ## HTTP Verbs
 
