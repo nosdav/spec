@@ -27,9 +27,12 @@ The NosDAV spec is extended with optional [NAVs](https://nosdav.com/navs) which 
 
 ## Identity
 
-Provisioning of identity and new accounts is outside the scope of this specification. However, it is assumed that users are on the Nostr network. A recommended strategy for a NosDAV provider is to use per-user storage in the form of '/nostr-id/', where 'nostr-id' is the Nostr public key
+Provisioning of identity and new accounts is outside the scope of this specification. However, it is assumed that users are on the Nostr network. 
+
+NosDAV can operate in two ways: single-user mode and multi-user mode. In multi-user mode, it might be helpful to provide each user with their own storage space, which is linked to their distinct public key (also known as Nostr-Id). This way, each user's data remains separate and secure. On the other hand, in single-user mode, there is no need for an additional directory, as only one user is utilizing the system.
 
 - see also [NAV-01](https://nosdav.com/navs/01.html)
+
 
 ## HTTP Verbs
 
