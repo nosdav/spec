@@ -23,7 +23,7 @@
 
 NosDAV is a distributed protocol similar to WebDAV, designed to be used in conjunction with the [Nostr](https://github.com/nostr-protocol/nostr) network. It provides a secure and efficient way to store files in the cloud using HTTP requests. The protocol includes a robust authentication mechanism that requires clients to send a signed Nostr event in a custom header to verify the authenticity of requests. By leveraging the power of Nostr and HTTP, NosDAV provides an innovative solution for secure cloud storage
 
-The NosDAV spec is extended with optional [NAVs](https://nosdav.com/navs) which are NosDAV Advancement Possibilities.
+The NosDAV spec is extended with optional [NAVs](https://nosdav.com/navs) which are NosDAV Advancement Visions.
 
 ## Identity
 
@@ -73,12 +73,6 @@ By default, access control in NosDAV allows anyone to retrieve a URI using the G
 
 - see also [NAV-04](https://nosdav.com/navs/04.html)
 
-## Content Types
-
-NosDAV allows for storage of any content type, including .json. The server should determine the file type based on its extension and respond with the appropriate Content-Type header. For example, .txt files should be served with Content-Type: text/plain, .html files with Content-Type: text/html, and .json files with Content-Type: application/json.
-
-- see also [NAV-06](https://nosdav.com/navs/06.html)
-
 ## CORS
 
 NosDAV servers should include CORS headers to enable cross-origin requests. The following headers should be set:
@@ -88,6 +82,12 @@ NosDAV servers should include CORS headers to enable cross-origin requests. The 
     Access-Control-Allow-Headers: Content-Type, Authorization"
 
 - see also [NAV-05](https://nosdav.com/navs/05.html)
+
+## Content Types
+
+NosDAV allows for storage of any content type, including .json. The server should determine the file type based on its extension and respond with the appropriate Content-Type header. For example, .txt files should be served with Content-Type: text/plain, .html files with Content-Type: text/html, and .json files with Content-Type: application/json.
+
+- see also [NAV-06](https://nosdav.com/navs/06.html)
 
 ## Discovery
 
