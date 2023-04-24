@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  title: NosDAV API
+  description: Nostr Distributed Authoring and Versioning API Specification
+  version: 1.0.0
+servers:
+  - url: https://{nostr-id}.{domain}
+    description: NosDAV server
+paths:
+  /{file-path}:
+    get:
+      summary: Retrieve a file
+      parameters:
+        - name: file-path
+          in: path
+          required: true
+          description: Path to the file
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: File not found
+    put:
+      summary: Update or create a file
+      parameters:
+        - name: file-path
+          in: path
+          required: true
+          description: Path to the file
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Invalid request body
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+components:
+  securitySchemes:
+    NostrAuth:
+      type: http
+      scheme: nostr
+      bearerFormat: base64
+security:
+  - NostrAuth: []
+

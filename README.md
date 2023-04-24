@@ -104,6 +104,9 @@ While NosDAV provides a flexible framework for storing files, the specification 
 
 This specification provides a flexible framework for storing files using HTTP requests. By supporting any type of file and using `nostr-id` as an identity, it enables clients to store and retrieve files securely. The authentication mechanism ensures the authenticity of requests and the server responds with the appropriate content type header based on the file extension. The use of the Schnorr signature scheme provides an additional layer of security to the authentication process.
 
+## API Documentation
+
+API Documenation is a work in progress and can be found [here](https://nosdav.com/spec/redoc.html).
 
 ## Extensions
 
