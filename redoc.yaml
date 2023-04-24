@@ -2,9 +2,9 @@ openapi: 3.0.0
 info:
   title: NosDAV API
   description: Nostr Distributed Authoring and Versioning API Specification
-  version: 1.0.0
+  version: 0.0.9
 servers:
-  - url: https://{nostr-id}.{domain}
+  - url: https://nosdav.nostr.rocks
     description: NosDAV server
 paths:
   /{file-path}:
